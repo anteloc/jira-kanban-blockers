@@ -3,7 +3,7 @@ This is a Tampermonkey user script for Jira Kanban boards.
 
 This script adds a new menu item to Tampermonkey browser plugin.
 
-When clicking that menu item while on a Jira Kanban board, the userscript will add a graph on top of the board that shows the blocker dependencies between the board's Jira issues and other non present on the board, if required.
+When clicking on that menu item while on a Jira Kanban board, the userscript will add a graph on top of the board that shows the blocker dependencies between the board's Jira issues and other non present on the board, if required.
 
 # Setup
 - Install Tampermonkey plugin on your browser.
