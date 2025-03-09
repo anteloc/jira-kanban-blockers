@@ -11,7 +11,9 @@ When clicking on that menu item while on a Jira Kanban board, the userscript wil
 - Import or copy-and-paste the userscript.js on this same repo.
 
 # Usage
-- Visit with your browser a Jira's Kanban board URL, e.g. 
+- Create or modify some Jira issues in order to add "Blocker for" or "Blocked by" link dependencies to other Jira issues.
+- Verify that those modified issues will show on a certain Jira Kanban board.
+- Go to that Jira Kanban, e.g. 
 `http://jira.mycompany.com/secure/RapidBoard.jspa?rapidView=<boardId>&projectKey=<projectId>&view=detail` 
 - Click on the Tampermonkey browser extension icon.
 - Click on the **Jira - Blockers chart** menu item.
