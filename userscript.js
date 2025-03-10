@@ -236,12 +236,14 @@ function buildChartOption(jiraGraph) {
   const nodes = jiraGraph.nodes;
 
   const cNodes = toChartNodes(nodes);
-  const maxY = cNodes.reduce((acc, cn) => Math.max(acc, cn.stack_pos), 0);
-
-  let categoriesX = cNodes.map((cn) => `${cn.num_blockers}`);
+  
+  let categoriesX = cNodes.map((cn) => cn.num_blockers);
   categoriesX = categoriesFromSequence(categoriesX, "", " Blockers");
 
-  let categoriesY = cNodes.map((cn) => `${cn.stack_pos}`);
+  const maxY = cNodes.reduce((acc, cn) => Math.max(acc, cn.stack_pos), 0);
+
+  let categoriesY = cNodes.map((cn) => cn.stack_pos);
+  categoriesY.push(maxY + 1); // add +1 category, barchart background include topmost nodes
   categoriesY = categoriesFromSequence(categoriesY, "", "");
 
   const xAxis = {
@@ -377,14 +379,16 @@ function buildChartOption(jiraGraph) {
       },
       {
         name: "background",
+        showBackground: true,
         type: "bar",
         zlevel: 0,
         data: categoriesX.map(function (cat) {
           return {
             category: cat,
-            value: maxY,
+            value: maxY + 1, // Disabled when set to 0
           };
         }),
+        barWidth: '95%',
         itemStyle: {
           color: (params) =>
             categoryColor(params.data.category, "", " Blockers"),
