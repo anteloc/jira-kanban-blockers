@@ -63,7 +63,9 @@ function renderChartForCurrentBoard() {
   Render blocks dependencies chart
 */
 function renderChart(containerId, chartOption) {
-  let blocksChart = echarts.init(document.getElementById(containerId));
+  let blocksChart = echarts.init(document.getElementById(containerId), null, {
+    renderer: 'svg'
+  });
 
   blocksChart.showLoading();
   blocksChart.setOption(chartOption, true);
@@ -400,3 +402,4 @@ function buildChartOption(jiraGraph) {
 
   return option;
 }
+
