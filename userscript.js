@@ -212,7 +212,7 @@ function dataNodeLabel(node) {
   const hStyleIdx = Math.min(node.num_blocked, 3);
   const hStyle = headerStyles[hStyleIdx];
 
-  const formatter = `{th|${node.issueId}}{${hStyle}|}\n{hr|}\n${node.issueSummary}`;
+  const formatter = `{th|${node.issueId}}{${hStyle}|}\n{hr|}\n\n ${node.issueSummary} \n`;
 
   return {
     show: true,
@@ -332,7 +332,7 @@ function buildChartOption(jiraGraph) {
               backgroundColor: colorForLevel(0),
               height: 10,
               borderRadius: [5, 5, 0, 0],
-              padding: [0, 10, 0, 10],
+              padding: [5, 10, 0, 10],
               width: "100%",
               color: "#eee",
             },
@@ -341,7 +341,7 @@ function buildChartOption(jiraGraph) {
               backgroundColor: colorForLevel(1),
               height: 10,
               borderRadius: [5, 5, 0, 0],
-              padding: [0, 10, 0, 10],
+              padding: [5, 10, 0, 10],
               width: "100%",
               color: "#eee",
             },
@@ -350,7 +350,7 @@ function buildChartOption(jiraGraph) {
               backgroundColor: colorForLevel(2),
               height: 10,
               borderRadius: [5, 5, 0, 0],
-              padding: [0, 10, 0, 10],
+              padding: [5, 10, 0, 10],
               width: "100%",
               color: "#eee",
             },
